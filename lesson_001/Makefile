@@ -4,7 +4,7 @@
 LANG=C
 LIBS= 
 CXXFLAGS=-std=c++17 -Wall -fsanitize=address,undefined -pedantic
-CXX=g++
+CXX=clang++
 
 SRCS = $(wildcard *.cpp)
 
