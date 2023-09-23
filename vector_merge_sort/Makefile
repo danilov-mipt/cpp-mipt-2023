@@ -1,5 +1,5 @@
-# This Makefile treats every *.cpp file as individual target.
-# It stores resulting binaries in bin/ subdirectory.
+# This Makefile builds catch v2 core and tests for
+# my implementation of Vector and MergeSort.
 
 LANG=C
 LIBS= 
