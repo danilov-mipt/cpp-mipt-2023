@@ -85,6 +85,7 @@ TEST_CASE("Filling two vectors with 10e4 natural numbers from 1 to 10e4, shuffli
     v1.PushBack(v[i]);
   } 
 
+  shuf(v);
   MergeSort(v, comp);
 
   for (size_t i = 0; i < 10000; ++i) {
