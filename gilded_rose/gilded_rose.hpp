@@ -7,6 +7,13 @@ public:
   std::string name;
   int32_t quality;
   int32_t sell_in;
+  /*
+   * Item needs virtual destructor,
+   * otherwise Wdelete-non-abstract-non-virtual-dtor occurs when
+   * deleting Items from vector
+   * https://wiki.sei.cmu.edu/confluence/display/cplusplus/OOP52-CPP.+Do+not+delete+a+polymorphic+object+without+a+virtual+destructor
+   */
+  virtual ~Item() = default;
 protected:
   /* quality_decrement is a retrofit for Conjured modifier */
   virtual int32_t quality_decrement() const { return 1; }
@@ -146,6 +153,13 @@ private:
   }
 
 public:
+  /* destructor is needed, leaks otherwise */
+  ~GildedRose() {
+    for (auto item : items) {
+      delete item;
+    }
+  }
+
   void UpdateQuality() {
     for (auto item : items) {
       item->UpdateQuality();
@@ -165,5 +179,9 @@ public:
     for (auto item : items) {
       item->Print();
     }
+  }
+
+  const std::vector<Item*>& GetItems() {
+    return items;
   }
 };
