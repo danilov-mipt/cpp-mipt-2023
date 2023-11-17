@@ -8,3 +8,5 @@ My programs for the cpp class of 2023-2024. My instructor is Mr Stecjuk, a known
 
 - `TemplateMergeSort/` <- my implementation of templated MergedSort for std::vector<T> with any type T. Type `make` to make and `./tests` to run tests.
 
+- `gilded_rose/` <- my solution of Gilded Rose task. Type `make` to make and `./tests` to run tests.
+
